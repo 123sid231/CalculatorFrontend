@@ -1,0 +1,77 @@
+.calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+}
+
+.header {
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.calculator {
+    width: calc(100% - 2rem);
+    height: 90%;
+    background: black;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultContainer {
+    height: 20%;
+    width: 100%;
+}
+
+.equation,
+.result {
+    color: white;
+    font-size: 4rem;
+    margin: 0;
+    text-align: right;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* direction: rtl; */
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 70%;
+    cursor: pointer;
+}
+
+.button {
+    background: grey;
+    color: white;
+    border-radius: 50%;
+    font-size: 3rem;
+    width: 20%;
+    height: 17%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.equal {
+    font-size: 5rem;
+    color: white;
+    background: orange;
+    width: 100%;
+    border-radius: 2rem;
+    margin: 1rem;
+    cursor: pointer;
+    text-align: center;
+}

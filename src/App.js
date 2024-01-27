@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+import Calculator from './Calculator/Calculator';
+import History from './History/History';
 
 function App() {
+
+  const [tab, setTab] = useState('Calculator')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='container'>
+        <div className='tabs'>
+          <p style={{ backgroundColor: tab === 'Calculator' ? 'lightblue' : 'white' }} className='calculator-tab' onClick={() => setTab('Calculator')}>Calculator</p>
+          <p style={{ backgroundColor: tab === 'History' ? 'lightblue' : 'white' }} className='history-tab' onClick={() => setTab('History')}>History</p>
+        </div>
+        {tab === 'Calculator' ?
+          <Calculator />
+          :
+          <div className='history' style={{height:'95%'}}>
+            <History />
+          </div>
+        }
+      </div>
     </div>
   );
 }

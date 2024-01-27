@@ -1,0 +1,25 @@
+.container {
+    text-align: center;
+    height: 100%;
+}
+
+.header {
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.history {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid grey;
+    font-size: 2rem;
+    flex-wrap: wrap;
+}
+
+.historyWrapper {
+    height: 90%;
+    overflow: auto; 
+}
