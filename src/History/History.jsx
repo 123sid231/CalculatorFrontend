@@ -18,15 +18,19 @@ export default function History() {
             <div className={cssClasses.header}>
                 <p>History</p>
             </div>
-            <div className={cssClasses.historyWrapper}>
-                {history.map((m) => (
-                    <div className={cssClasses.history} key={m._id}>
-                        <p>{m.expression}</p>
-                        <p>{m.result}</p>
-                    </div>
-                ))
-                }
-            </div>
+            {history.length > 1 ?
+                < div className={cssClasses.historyWrapper}>
+                    {history.map((m) => (
+                        <div className={cssClasses.history} key={m._id}>
+                            <p>{m.expression}</p>
+                            <p>{m.result}</p>
+                        </div>
+                    ))
+                    }
+                </div>
+                :
+                <p className='header'>No Data Available</p>
+            }
         </div >
     )
 }

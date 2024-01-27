@@ -19,13 +19,14 @@ export default function Calculator() {
         }
     }
 
-    function evaluate() {
+    async function evaluate() {
         try {
+            let currentExpression = expression
             let ans = eval(expression)
             let result = ans.toString().includes('.') ? ans.toFixed(2) : ans
             setResult(result)
-            axios.post('http://localhost:8000/calculator/insertHistory', { expression: expression, result: result })
             setExpression(result)
+            await axios.post('http://localhost:8000/calculator/insertHistory', { expression: currentExpression, result: result })
         } catch (error) {
             console.log(error)
         }
@@ -43,7 +44,7 @@ export default function Calculator() {
                 </div>
                 <div className='buttons'>
                     {numbers.map((btn) => (
-                        <div className='button' onClick={() => { createExpression(btn) }} >{btn}</div>
+                        <div key={btn} className='button' onClick={() => { createExpression(btn) }} >{btn}</div>
                     ))}
                 </div>
                 <div className='equal' onClick={evaluate}>
